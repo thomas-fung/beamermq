@@ -1,0 +1,97 @@
+---
+title: "MATH/STATxxx: A great course"
+subtitle: "Topic/Week x: A great topic/week of material"
+date: "Semester 1, 20xx"
+fontsize: 10pt
+classoption: "aspectratio=169"
+output: 
+  beamermq::macquarie:
+     keep_tex: yes
+     toc: no
+     # Change texmflocal to yes if you install the template files into your local tex installation.
+     texmflocal: no
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, cache=TRUE)
+```
+
+# Intro
+
+## Slide with bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+Use `\alert` to \alert{highlight} some text
+
+### Some enumeration
+
+1. The first item
+1. Stuff
+1. Nonsense
+
+# Using R
+
+## Slide with R output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with graphics
+
+```{r pressure}
+plot(pressure)
+```
+
+## Slide with mathematics
+
+Suppose $X_1, X_2, \ldots, X_n$ are independent and identitically distributed random variables with common cumulative distribution function $F_X$ with support on $\mathbb{R}$. The empirical cumulative distribution function is defined with,
+\[
+  F_n(x) = \frac{1}{n}\sum_{i = 1}^n I_{\left( -\infty, x\right]}(X_i)
+\]
+where $I_A(x)$ denotes the indicator function for the set $A$. The following theorem provides uniform covergence for $F_n$
+
+
+:::{.block}
+### Glivenko-Cantelli Theorem
+If $X_i$ are i.i.d. with common cdf $F$ then,
+\[
+  \left\| F_n - F \right\| = \sup_{x \in \mathbb{R}} |F_n(x) - F(x)| \stackrel{n \to \infty}{\longrightarrow} 0\quad \text{almost surely.}
+\]
+:::
+
+* See @vanderVaart.Wellner:96 for more information on Empirical processes.
+
+---
+
+A slide with no header if you need more space.
+
+# RMarkdown Examples
+
+## R Figure
+
+```{r mtcarsboxplot, echo = TRUE}
+plot(mpg ~ cyl, data = mtcars)
+```
+
+## R Table
+
+A simple `knitr::kable` example:
+
+\small
+
+```{r kableEx, echo=TRUE}
+knitr::kable(head(mtcars),
+       caption="First few observations of the mtcars dataset")
+```
+
+## Resources
+
+* See the [RMarkdown repository](https://github.com/rstudio/rmarkdown) for more on RMarkdown
+* Also the 
+
+## References

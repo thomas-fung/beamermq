@@ -1,0 +1,13 @@
+Package: beamermq
+Type: Package
+Title: Rmarkdown Beamer template for Dept of Maths and Stats at Macquarie University
+Version: 1.0.0
+Date: 2019-03-13
+Author: Justin Wishart
+Maintainer: Justin Wishart <justin.wishart@mq.edu.au>
+Description: Implements the Macquarie Style to Beamer PDF presentations.
+Imports: rmarkdown, knitr
+VignetteBuilder: knitr
+License: GPL (>= 2)
+Encoding: UTF-8
+NeedsCompilation: no

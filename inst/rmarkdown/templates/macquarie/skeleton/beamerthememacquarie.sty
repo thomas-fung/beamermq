@@ -1,0 +1,158 @@
+%% This is the Macquarie beamer theme
+%% Created for Department of Mathematics and Statistics, Macquarie University
+%% Modified by Justin Wishart, 17/01/2019
+%% Inspired by the binb package
+
+\RequirePackage{bbm}
+\RequirePackage{tikz}
+\RequirePackage{printlen}
+\usecolortheme{macquarie}
+\usefonttheme{macquarie}
+
+\setbeamertemplate{footline}[text line]{%
+  \color{MQFooterText}
+  \parbox{0.8\linewidth}{
+    \vspace*{-8pt}\insertshorttitle~ DEPARTMENT OF MATHEMATICS \& STATISTICS
+  }
+  \hfill%
+  \parbox{0.15\linewidth}{
+    \vspace*{-8pt}\raggedleft\insertpagenumber
+  }
+}
+
+%% larger squares for enumeration
+%\defbeamertemplate{enumerate item}{mysquare}
+%{ \raisebox{-0.ex}{\hbox{%
+%    \usebeamerfont*{item projected}%
+%    \usebeamercolor{enumerate item}%
+%    \vrule width4ex height2.7ex depth.7ex%
+%    \hskip-4ex%
+%    \hbox to4ex{%
+%      \hfil%
+%      \color{LightGrey}\raisebox{.2ex}{\insertenumlabel}%
+%      \hfil}%
+%  }}%
+%}
+%[action]
+%{\setbeamerfont{item projected}{size=\scriptsize}}
+%\setbeamertemplate{enumerate item}[mysquare]
+%\setbeamertemplate{itemize item}[square]
+%\setbeamertemplate{items}[mysquare]
+
+%\usesubitemizeitemtemplate{%
+%    \tiny\raise1.5pt\hbox{\color{beamerstructure}$\blacktriangleright$}%
+%}
+%\usesubsubitemizeitemtemplate{%
+%    \tiny\raise1.5pt\hbox{\color{beamerstructure}$\bigstar$}%
+%}
+%
+%\setbeamertemplate{section in toc}[square]
+%\setbeamerfont{section number projected}{size=\large}
+%
+%\setbeamertemplate{section in toc shaded}[default][50]
+
+% Figure placement
+\RequirePackage[absolute,overlay]{textpos}
+%\TPoptions{showboxes = true}
+\setlength{\TPHorizModule}{\paperwidth}
+\setlength{\TPVertModule}{\paperheight}
+
+% Macquarie title page
+% One can alter the font size by setting eg 'titlefontsize: 20pt' in the YAML header
+\setbeamerfont{title}{series=\bfseries,parent=structure,size=\large}  %\fontsize{16}{19}
+\setbeamerfont{subtitle}{series=\bfseries,parent=structure,size=\small} %\fontsize{9}{11}
+\setbeamerfont{date}{series=\bfseries,parent=structure,size=\scriptsize} %\fontsize{6}{8}
+
+\newlength{\MQlogowidth}
+\setlength{\MQlogowidth}{3.25cm}
+\newlength{\MQlogox}
+\setlength{\MQlogox}{\dimexpr(\paperwidth-\MQlogowidth)\relax}
+
+\newlength{\MQmargin}
+\setlength{\MQmargin}{0.25cm}
+\newlength{\backwidth}
+\setlength{\backwidth}{\dimexpr(\paperwidth-2\MQmargin)\relax}
+\newlength{\backheight}
+\setlength{\backheight}{\dimexpr(\paperheight-2\MQmargin)\relax}
+\newlength{\tocmargin}
+\setlength{\tocmargin}{5\MQmargin}
+\newlength{\tocheight}
+\setlength{\tocheight}{\dimexpr(\paperheight-2\MQmargin-\tocmargin)\relax}
+\newlength{\bottomtitleheight}
+\setlength{\bottomtitleheight}{\dimexpr(0.525\paperheight)\relax}
+\newlength{\bottomtitlepos}
+\setlength{\bottomtitlepos}{\dimexpr(\paperheight-\bottomtitleheight-\MQmargin)\relax}
+\newlength{\frametitlelogopos}
+\setlength{\frametitlelogopos}{\dimexpr(\MQlogox/\paperwidth)\relax}
+\newlength{\logoheight}
+\setlength{\logoheight}{1.15cm}
+
+\setbeamertemplate{title page}
+{
+
+	\begin{textblock}{0}(\MQmargin/\paperwidth,\MQmargin/\paperheight)
+		\includegraphics[width=\backwidth, height = \backheight,keepaspectratio=false]{back-title}
+	\end{textblock}
+	\begin{textblock}{0}(\MQmargin/\paperwidth,\bottomtitlepos/\paperheight)
+		\includegraphics[width = \backwidth, height = \bottomtitleheight,keepaspectratio=false]{MQfullMQcolors}
+	\end{textblock}
+	\begin{textblock}{0}(\MQlogox/\paperheight, 0.05)
+		\includegraphics[height=\logoheight,width=!,keepaspectratio]{MQ_MAS_HOR_CMYK_POS}
+	\end{textblock}
+	\begin{textblock}{0.9}(0.075,0.2)\usebeamerfont{title}
+		{\color{black}\raggedright\par\inserttitle}
+	\end{textblock}
+	\begin{textblock}{0.9}(0.075,0.28)\usebeamerfont{subtitle}
+		{\color{MQRedText}\insertsubtitle}
+	\end{textblock}
+	\begin{textblock}{0.85}(0.075,0.36)\usebeamerfont{date}
+		{\tiny \color{black}\raggedright{\insertdate}}
+	\end{textblock}
+}
+
+
+% Section page
+\newlength{\sectionwidth}
+\setlength{\sectionwidth}{\dimexpr(0.42\paperwidth)\relax}
+\setbeamertemplate{section page}
+{
+	\begin{textblock}{0}(\MQmargin/\paperwidth,\MQmargin/\paperheight)
+		\includegraphics[width=\backwidth, height = \backheight, keepaspectratio=false]{back-title}
+	\end{textblock}
+	\begin{textblock}{0}(\MQmargin/\paperwidth,\MQmargin/\paperheight)
+		\includegraphics[width=!, height = \backheight]{sectionpage}
+	\end{textblock}
+	\begin{textblock}{0.45}(0.5,0.425)\usebeamerfont{title}
+	{\color{black}\raggedright\par\insertsection}
+	\end{textblock}
+	\begin{textblock}{0}(\MQlogox/\paperheight, 0.05)
+		\includegraphics[height=\logoheight,width=!,keepaspectratio]{MQ_MAS_HOR_CMYK_POS}
+	\end{textblock}
+}
+
+
+% Reduce vertical space around displayed equations
+\preto\frame{%
+\setlength{\abovedisplayskip}{1pt}%
+\setlength{\belowdisplayskip}{4pt}%
+\setlength{\abovedisplayshortskip}{0pt}%
+\setlength{\belowdisplayshortskip}{0pt}}
+
+% Redefine shaded environment if it exists (for R plots)
+\ifcsname Shaded\endcsname
+  \definecolor{shadecolor}{RGB}{225,225,225}
+  \renewenvironment{Shaded}{\color{black}\begin{snugshade}\color{black}}{\end{snugshade}}
+\fi
+
+\addtobeamertemplate{frametitle}{}{
+%\begin{textblock}{0}(\dimexpr(\MQlogox/\paperheight)\relax, 0)
+%	\includegraphics[height=\logoheight,width=\MQlogox]{MQ_MAS_HOR_CMYK_POS}
+%\end{textblock}
+\hrule
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,xshift=10pt,yshift=5pt] at (current page.north east) {\includegraphics[height=\logoheight, keepaspectratio]{MQ_MAS_HOR_CMYK_POS}};
+\end{tikzpicture}
+}
+
+%%
+%% End of file `beamerthememacquarie.sty'.

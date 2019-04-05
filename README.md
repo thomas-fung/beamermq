@@ -39,15 +39,11 @@ output:
 bibliography: references.bib
 ---
 
-\`\`\`{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, cache=TRUE)
-\`\`\`
-
 # Intro
 
 ## Slide with bullets
 
-- Bullet 1
+- Bullet 1 Some statement with simple calculation \(1 + 1 = `r 1 + 1`\)
 - Bullet 2
 - Bullet 3
 

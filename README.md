@@ -22,6 +22,8 @@ Alternatively, if one doesn't want to download all the graphics files for one ca
 
 ### Example Rmarkdown file
 
+```
+
 ---
 title: "MATH/STATxxx: A great course or (My great Research Presentation)"
 subtitle: "Topic/Week x: A great topic/week of material (or Special Session on great maths held at  good conference, great city, great country)"
@@ -49,3 +51,4 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, cache=TRUE)
 - Bullet 2
 - Bullet 3
 
+```

@@ -90,14 +90,14 @@
 \setbeamertemplate{title page}
 {
 
-	\begin{textblock}{0}(\MQmargin/\paperwidth,\MQmargin/\paperheight)
+\begin{textblock}{0}(\MQmargin/\paperwidth,\MQmargin/\paperheight)
 		\includegraphics[width=\backwidth, height = \backheight,keepaspectratio=false]{back-title}
 	\end{textblock}
 	\begin{textblock}{0}(\MQmargin/\paperwidth,\bottomtitlepos/\paperheight)
 		\includegraphics[width = \backwidth, height = \bottomtitleheight,keepaspectratio=false]{MQfullMQcolors}
 	\end{textblock}
 	\begin{textblock}{0}(\MQlogox/\paperheight, 0.05)
-		\includegraphics[height=\logoheight,width=!,keepaspectratio]{MQ_MAS_HOR_CMYK_POS}
+		\includegraphics[height=\logoheight,width=!,keepaspectratio]{MQ_INT_HOR_RGB_POS}
 	\end{textblock}
 	\begin{textblock}{0.9}(0.075,0.2)\usebeamerfont{title}
 		{\color{black}\raggedright\par\inserttitle}
@@ -105,10 +105,12 @@
 	\begin{textblock}{0.9}(0.075,0.28)\usebeamerfont{subtitle}
 		{\color{MQRedText}\insertsubtitle}
 	\end{textblock}
-	\begin{textblock}{0.85}(0.075,0.36)\usebeamerfont{date}
+	\begin{textblock}{0.85}(0.075,0.33)\usebeamerfont{date}
 		{\tiny \color{black}\raggedright{\insertdate}}
 	\end{textblock}
-}
+	\begin{textblock}{0.85}(0.075,0.37)\usebeamerfont{author}
+		{\color{black}\insertauthor}
+	\end{textblock}}
 
 
 % Section page
@@ -126,7 +128,7 @@
 	{\color{black}\raggedright\par\insertsection}
 	\end{textblock}
 	\begin{textblock}{0}(\MQlogox/\paperheight, 0.05)
-		\includegraphics[height=\logoheight,width=!,keepaspectratio]{MQ_MAS_HOR_CMYK_POS}
+		\includegraphics[height=\logoheight,width=!,keepaspectratio]{MQ_INT_HOR_RGB_POS}
 	\end{textblock}
 }
 
@@ -150,7 +152,7 @@
 %\end{textblock}
 \hrule
 \begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north east,xshift=10pt,yshift=5pt] at (current page.north east) {\includegraphics[height=\logoheight, keepaspectratio]{MQ_MAS_HOR_CMYK_POS}};
+\node[anchor=north east,xshift=10pt,yshift=5pt] at (current page.north east) {\includegraphics[height=\logoheight, keepaspectratio]{MQ_INT_HOR_RGB_POS}};
 \end{tikzpicture}
 }
 
